@@ -19,7 +19,11 @@ This project implements a federated learning simulation with robust defense mech
 - **Main Execution**: Runs multiple scenarios and visualizes results.
 
 ## Usage
-1. **Prepare Data**: Place the processed IoTDIAD CSV file at the path specified in the config (`csv_file`).
+1. **Preprocess Data**: Use `preprocess_dataset.py` to clean, encode, and select features from the raw IoTDIAD dataset. Example:
+	```bash
+	python preprocess_dataset.py --input IoTDIAD_sum.csv --out IoTDIAD_processed.csv --k_features 30
+	```
+	The processed CSV should be placed at the path specified in the config (`csv_file`).
 2. **Run Notebook**: Execute the notebook cells sequentially to simulate federated learning under different attack and defense scenarios.
 3. **View Results**: Accuracy and attack success rate plots are saved as PNG files for analysis.
 
@@ -40,7 +44,7 @@ pip install torch scikit-learn pandas matplotlib
 - Modify the model architecture in the `SimpleMLP` class as needed.
 
 ## References
-- [IoTDIAD Dataset](https://drive.google.com/file/d/1aKLyUI0_Yv-1yj6OirQU8ra6qt-Juf8-/view?usp=drive_link)
+- [IoTDIAD Dataset](https://drive.google.com/file/d/1LZFUD7sGw4ukyWikPZ9ukaRp11H8ZqXp/view?usp=drive_link)
 - Federated Learning literature on adversarial robustness and defense strategies.
 
 ## License
